@@ -31,7 +31,7 @@ For example,
 Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
 
 After removing the second node from the e">
-<meta property="og:updated_time" content="2016-08-26T04:32:21.900Z">
+<meta property="og:updated_time" content="2016-08-26T04:33:31.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode:Remove Nth Node From End of List">
 <meta name="twitter:description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
@@ -94,7 +94,7 @@ After removing the second node from the e">
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisb9i8d90000ysg2fqap99um" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisb9ju1l00012wg2r6g9fjor" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -108,7 +108,7 @@ After removing the second node from the end, the linked list becomes 1-&gt;2-&gt
 </code></pre><p>Note:</p>
 <p>Given n will always be valid.</p>
 <p>Try to do this in one pass.</p>
-<p>思路：思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
+<p>思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
 <p><strong>C++代码</strong></p>
 <pre><code>[cpp]
 ListNode* removeNthFromEnd(ListNode* head, int n) {
