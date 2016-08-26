@@ -15,7 +15,7 @@ Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, an" />
   
   
   
-  <title>Remove Nth Node | 龙少爷的博客</title>
+  <title>LeetCode:Remove Nth Node From End of List | 龙少爷的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="#题目描述：Given a linked list, remove the nth node from the end of list and return its head.
 For example,
@@ -23,7 +23,7 @@ Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
 
 After removing the second node from the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Remove Nth Node">
+<meta property="og:title" content="LeetCode:Remove Nth Node From End of List">
 <meta property="og:url" content="http://lsyldliu/2016/08/26/Remove-Nth-Node/index.html">
 <meta property="og:site_name" content="龙少爷的博客">
 <meta property="og:description" content="#题目描述：Given a linked list, remove the nth node from the end of list and return its head.
@@ -31,9 +31,9 @@ For example,
 Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
 
 After removing the second node from the">
-<meta property="og:updated_time" content="2016-08-26T04:13:42.195Z">
+<meta property="og:updated_time" content="2016-08-26T04:17:34.990Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Remove Nth Node">
+<meta name="twitter:title" content="LeetCode:Remove Nth Node From End of List">
 <meta name="twitter:description" content="#题目描述：Given a linked list, remove the nth node from the end of list and return its head.
 For example,
 Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
@@ -87,14 +87,14 @@ After removing the second node from the">
         
   
     <h1 class="entry-title article-title">
-      Remove Nth Node
+      LeetCode:Remove Nth Node From End of List
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisb8ugza0000v8g2jaewsop7" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisb8z81w0000h8g25yk0w9h7" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -142,28 +142,8 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
      return head;
 }
 </code></pre><p><strong>Java代码</strong></p>
-<pre><code>java
-public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode p = head;
-    ListNode q = head;
-    if(head == null || head.next == null){
-        return null;
-    }
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        ListNode p = head;</div><div class="line">        ListNode q = head;</div><div class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">            p = p.next;</div><div class="line">        <span class="keyword">if</span>(p == <span class="keyword">null</span>)</div><div class="line">           <span class="keyword">return</span> head.next;</div><div class="line">        <span class="keyword">while</span>(p.next != <span class="keyword">null</span>)&#123;</div><div class="line">            p = p.next;</div><div class="line">            q = q.next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        q.next = q.next.next;</div><div class="line">        <span class="keyword">return</span> head;</div><div class="line">        </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 
-    for(int i = 0; i &lt; n; i++)
-        p = p.next;
-    if(p == null)
-       return head.next;
-    while(p.next != null){
-        p = p.next;
-        q = q.next;
-    }
-
-    q.next = q.next.next;
-    return head;
-
-}
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> context = canvas.getContext(<span class="string">"2d"</span>);</div></pre></td></tr></table></figure>
       
     </div><!-- .entry-content -->
 
@@ -215,7 +195,7 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
       <ul>
         
           <li>
-            <a href="/2016/08/26/Remove-Nth-Node/">Remove Nth Node</a>
+            <a href="/2016/08/26/Remove-Nth-Node/">LeetCode:Remove Nth Node From End of List</a>
           </li>
         
           <li>
