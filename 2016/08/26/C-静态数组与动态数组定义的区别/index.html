@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。
+静态定义：
+int a[5];  正确
+int i = 5;
+int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
+" />
+  
 
   
   
@@ -11,14 +18,42 @@
   
   
   
-  <title>龙少爷的博客</title>
+  <title>C++ 静态数组与动态数组定义的区别 | 龙少爷的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="龙少爷的博客">
-<meta property="og:url" content="http://lsyldliu/index.html">
+  <meta name="description" content="C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。
+静态定义：
+int a[5];  正确
+int i = 5;
+int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
+动态定义：
+int size=50;
+int *p=new int[size]; 是正确的
+两种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 静态数组与动态数组定义的区别">
+<meta property="og:url" content="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/index.html">
 <meta property="og:site_name" content="龙少爷的博客">
+<meta property="og:description" content="C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。
+静态定义：
+int a[5];  正确
+int i = 5;
+int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
+动态定义：
+int size=50;
+int *p=new int[size]; 是正确的
+两种">
+<meta property="og:updated_time" content="2016-08-26T12:45:54.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="龙少爷的博客">
+<meta name="twitter:title" content="C++ 静态数组与动态数组定义的区别">
+<meta name="twitter:description" content="C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。
+静态定义：
+int a[5];  正确
+int i = 5;
+int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
+动态定义：
+int size=50;
+int *p=new int[size]; 是正确的
+两种">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -59,17 +94,15 @@
     </nav>
 </header>
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-    <article id="post-C-静态数组与动态数组定义的区别" class="post-C-静态数组与动态数组定义的区别 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-C-静态数组与动态数组定义的区别" class="post-C-静态数组与动态数组定义的区别 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>
+    <h1 class="entry-title article-title">
+      C++ 静态数组与动态数组定义的区别
     </h1>
   
 
@@ -123,163 +156,20 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
 </article>
 
 
-
-
-
-
-  
-    <article id="post-Remove-Nth-Node" class="post-Remove-Nth-Node post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/08/26/Remove-Nth-Node/">LeetCode:Remove Nth Node From End of List</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisbr51l000013og26mupvb6k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
-<p>For example,</p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
-
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p>Note:</p>
-<p>Given n will always be valid.</p>
-<p>Try to do this in one pass.</p>
-<p>思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
-<p><strong>C++代码</strong></p>
-<pre><code>[cpp]
-ListNode* removeNthFromEnd(ListNode* head, int n) {
-    if(head == NULL || head-&gt;next == NULL)
-    return NULL;
-
-    ListNode* p = head;
-    ListNode* q = head;
-    ListNode* pPre = NULL;
-
-    for(int i = 0; i &lt; n - 1; i++){
-        p = p-&gt;next;
-    }
-
-    while(p-&gt;next != NULL){
-        pPre = q;
-        p = p-&gt;next;
-        q = q-&gt;next;
-    }
-
-     if(pPre == NULL){
-        head = q-&gt;next;
-        delete q;
-    }
-    else{
-        pPre-&gt;next = q-&gt;next;
-        delete q;
-    }
-
-
-     return head;
-}
-</code></pre><p><strong>Java代码</strong></p>
-<pre><code> public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode p = head;
-    ListNode q = head;
-    if(head == null || head.next == null){
-        return null;
-    }
-
-    for(int i = 0; i &lt; n; i++)
-        p = p.next;
-    if(p == null)
-       return head.next;
-    while(p.next != null){
-        p = p.next;
-        q = q.next;
-    }
-
-    q.next = q.next.next;
-    return head;
-
-}
-</code></pre>
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2016/08/26/Remove-Nth-Node/">
-    <time datetime="2016-08-26T03:01:18.000Z" class="entry-date">
-        2016-08-26
-    </time>
-</a>
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
     
     
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="post-hello-world post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/08/24/hello-world/">欢迎帅哥美女光临寒客</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="cisbr51kt00003og2ucvj2hxd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>　　欢迎访问本人的博客！博客刚搭建成功，界面比较简单，以后我会逐渐丰富博客的内容。</p>
-<p>　　本人于2015年6月毕业于安徽工业大学自动化专业，9月进入浙江大学控制系攻读硕士学位，目前研究方向为工业控制系统网络安全。本人喜欢技术编程，目前正在学习C++/Java，准备从事互联网技术研发相关工作。平时打打网球，看看电影，日子就这么过去了。</p>
-<p>　　鉴于本人的水平比较low，在今后的学习过程中还需继续努力，希望各位大神不吝赐教，给予指导！本人的博客地址：lsyldliu.cn，邮箱：ldliu@zju.edu.cn，QQ:1250108009，欢迎与我联系。</p>
-<p>　　<strong>学姐你好美啊，好稀饭你，咋办？你来镇博客吧！</strong></p>
-<p><img src="http://img0.ph.126.net/yTq32O8EyOPJ_QcomoJWQg==/6631572441537774216.jpg" alt="学姐你好美啊，好稀饭你啊，咋办？那就拿你来镇楼好了" title="这是美丽的学姐朱晓宇，做学弟女朋友吧！"></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2016/08/24/hello-world/">
-    <time datetime="2016-08-24T14:54:02.206Z" class="entry-date">
-        2016-08-24
-    </time>
-</a>
+        <span class="nav-next"><a href="/2016/08/26/Remove-Nth-Node/" rel="next">LeetCode:Remove Nth Node From End of List <span class="meta-nav">→</span></a></span>
     
-    
-    </footer>
-</article>
+</nav><!-- .nav-single -->
 
 
 
 
 
 
-  
-  
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
