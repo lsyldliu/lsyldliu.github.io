@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and" />
+  <meta name="description" content="Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given “abcabcbb”, the answer is “abc”, which the leng" />
   
 
   
@@ -15,30 +15,27 @@ Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and" />
   
   
   
-  <title>LeetCode:Remove Nth Node From End of List | 龙少爷的博客</title>
+  <title>Longest Substring Without Repeating Characters | 龙少爷的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
+  <meta name="description" content="Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given “abcabcbb”, the answer is “abc”, which the length is 3.
+Given “bbbbb”, the answer is “b”, with th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode:Remove Nth Node From End of List">
-<meta property="og:url" content="http://lsyldliu/2016/08/26/Remove-Nth-Node/index.html">
+<meta property="og:title" content="Longest Substring Without Repeating Characters">
+<meta property="og:url" content="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/index.html">
 <meta property="og:site_name" content="龙少爷的博客">
-<meta property="og:description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
-<meta property="og:updated_time" content="2016-08-26T04:33:31.298Z">
+<meta property="og:description" content="Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given “abcabcbb”, the answer is “abc”, which the length is 3.
+Given “bbbbb”, the answer is “b”, with th">
+<meta property="og:updated_time" content="2016-08-26T13:42:11.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode:Remove Nth Node From End of List">
-<meta name="twitter:description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
+<meta name="twitter:title" content="Longest Substring Without Repeating Characters">
+<meta name="twitter:description" content="Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given “abcabcbb”, the answer is “abc”, which the length is 3.
+Given “bbbbb”, the answer is “b”, with th">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -79,7 +76,7 @@ After removing the second node from the e">
     </nav>
 </header>
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Remove-Nth-Node" class="post-Remove-Nth-Node post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Longest-Substring-Without-Repeating-Characters" class="post-Longest-Substring-Without-Repeating-Characters post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -87,88 +84,92 @@ After removing the second node from the e">
         
   
     <h1 class="entry-title article-title">
-      LeetCode:Remove Nth Node From End of List
+      Longest Substring Without Repeating Characters
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisbt5he60001ykg233rjs3gf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="cisbt5hem0002ykg2dokrswz2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
-<p>For example,</p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
+        <p>Given a string, find the length of the longest substring without repeating characters.</p>
+<p>Examples:</p>
+<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
+<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
+<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+<p>Subscribe to see which companies asked this question</p>
+<p>本题使用两种解法，第一种用标志数组，用于记录字符串中元素是否已经被遍历过，如未遍历，则置为true；方法2使用HashTable,将未遍历的字符放入HashMap中，再依次查询是否有重复元素，从而找到最大子串。这里用Java语言描述。</p>
+<p>Solution 1:</p>
+<pre><code>public int lengthOfLongestSubstring(String s) {
+  if(s == null)
+  return 0;
+  boolean[] flag = new boolean[256];
+  int start = 0;
+  int result = 0;
 
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p>Note:</p>
-<p>Given n will always be valid.</p>
-<p>Try to do this in one pass.</p>
-<p>思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
-<p><strong>C++代码</strong></p>
-<pre><code>[cpp]
-ListNode* removeNthFromEnd(ListNode* head, int n) {
-    if(head == NULL || head-&gt;next == NULL)
-    return NULL;
+  char[] arr = s.toCharArray();
 
-    ListNode* p = head;
-    ListNode* q = head;
-    ListNode* pPre = NULL;
+  for(int i =0; i &lt; arr.length; i++){
+      char current = arr[i];
+      if(!flag[current]){
+          flag[current] = true;
+      }
+      else{
+          result = Math.max(result, i - start);
+          for(int k = start; k &lt; i; k++){
+              if(arr[k] == current){
+                  start = k + 1;
 
-    for(int i = 0; i &lt; n - 1; i++){
-        p = p-&gt;next;
-    }
+                  break;
+              }
+             flag[arr[k]] = false;
+          }
 
-    while(p-&gt;next != NULL){
-        pPre = q;
-        p = p-&gt;next;
-        q = q-&gt;next;
-    }
+      }
 
-     if(pPre == NULL){
-        head = q-&gt;next;
-        delete q;
-    }
-    else{
-        pPre-&gt;next = q-&gt;next;
-        delete q;
-    }
+  }
 
-
-     return head;
+  result = Math.max(arr.length - start, result);
+  return result;
 }
-</code></pre><p><strong>Java代码</strong></p>
-<pre><code> public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode p = head;
-    ListNode q = head;
-    if(head == null || head.next == null){
-        return null;
-    }
+</code></pre><p>Solution 2:</p>
+<pre><code>public int lengthOfLongestSubstring(String s) {
+  if(s == null)
+  return 0;
 
-    for(int i = 0; i &lt; n; i++)
-        p = p.next;
-    if(p == null)
-       return head.next;
-    while(p.next != null){
-        p = p.next;
-        q = q.next;
-    }
+  int start = 0;
+  int result = 0;
 
-    q.next = q.next.next;
-    return head;
-
+  HashMap&lt;Character,Integer&gt; map = new HashMap&lt;Character, Integer&gt;();
+  for(int i = 0; i &lt; s.length(); i++){
+      char c = s.charAt(i);
+      if(map.containsKey(c)){
+          result = Math.max(result, map.size());
+          while(map.containsKey(c)){
+              map.remove(s.charAt(start));
+              start++;
+          }
+          map.put(c, i);
+      }
+      else{
+          map.put(c, i);
+      }
+  }
+  result = Math.max(result, map.size());
+  return result;
 }
 </code></pre>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2016/08/26/Remove-Nth-Node/">
-    <time datetime="2016-08-26T03:01:18.000Z" class="entry-date">
+    <a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">
+    <time datetime="2016-08-26T12:50:45.000Z" class="entry-date">
         2016-08-26
     </time>
 </a>
@@ -182,10 +183,8 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2016/08/26/C-静态数组与动态数组定义的区别/" rel="prev"><span class="meta-nav">←</span> C++ 静态数组与动态数组定义的区别</a></span>
     
-    
-        <span class="nav-next"><a href="/2016/08/24/hello-world/" rel="next">欢迎帅哥美女光临寒客 <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/2016/08/26/C-静态数组与动态数组定义的区别/" rel="next">C++ 静态数组与动态数组定义的区别 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 

@@ -42,7 +42,7 @@ int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
 int size=50;
 int *p=new int[size]; 是正确的
 两种">
-<meta property="og:updated_time" content="2016-08-26T12:45:54.311Z">
+<meta property="og:updated_time" content="2016-08-26T12:48:07.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ 静态数组与动态数组定义的区别">
 <meta name="twitter:description" content="C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。
@@ -109,7 +109,7 @@ int *p=new int[size]; 是正确的
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisbr51l400023og2dvuo2jay" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisbt5hdt0000ykg2fsdmd3m9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -137,7 +137,7 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
 5) int[] a; a=new int[5]; //正确,同(2)一样int[] a; a={1,2,3,4,5}; //错误,数组常量只能在初始化操作中使用，如（3）
 6) int a[]; a[0]=1; //错误,因为数组没有初始化,不能赋值 a[1]=2;
 </code></pre><p>1.动态初始化：数组定义与为数组分配空间和赋值的操作分开进行； （一般用指针实现动态数组，返回数组首地址）</p>
-<p>2.静态初始化：在定义数字的同时就为数组元素分配空间并赋值；</p>
+<p>2.静态初始化：在定义数组的同时就为数组元素分配空间并赋值；</p>
 <p>3.默认初始化：数组是引用类型，它的元素相当于类的成员变量，因此数组分配空间后，每个元素也被按照成员变量的规则被隐士初始化。</p>
 <p>数组定义的区别，可参考这篇文章<a href="http://www.cnblogs.com/Yogurshine/archive/2012/12/29/2839238.html" target="_blank" rel="external">Java、C#、C++定义数组区别</a></p>
 
@@ -159,6 +159,8 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
     
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/" rel="prev"><span class="meta-nav">←</span> Longest Substring Without Repeating Characters</a></span>
     
     
         <span class="nav-next"><a href="/2016/08/26/Remove-Nth-Node/" rel="next">LeetCode:Remove Nth Node From End of List <span class="meta-nav">→</span></a></span>
@@ -190,6 +192,10 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">Longest Substring Without Repeating Characters</a>
+          </li>
         
           <li>
             <a href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>

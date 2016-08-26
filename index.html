@@ -61,6 +61,114 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-Longest-Substring-Without-Repeating-Characters" class="post-Longest-Substring-Without-Repeating-Characters post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">Longest Substring Without Repeating Characters</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="cisbt5hem0002ykg2dokrswz2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>Given a string, find the length of the longest substring without repeating characters.</p>
+<p>Examples:</p>
+<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
+<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
+<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+<p>Subscribe to see which companies asked this question</p>
+<p>本题使用两种解法，第一种用标志数组，用于记录字符串中元素是否已经被遍历过，如未遍历，则置为true；方法2使用HashTable,将未遍历的字符放入HashMap中，再依次查询是否有重复元素，从而找到最大子串。这里用Java语言描述。</p>
+<p>Solution 1:</p>
+<pre><code>public int lengthOfLongestSubstring(String s) {
+  if(s == null)
+  return 0;
+  boolean[] flag = new boolean[256];
+  int start = 0;
+  int result = 0;
+
+  char[] arr = s.toCharArray();
+
+  for(int i =0; i &lt; arr.length; i++){
+      char current = arr[i];
+      if(!flag[current]){
+          flag[current] = true;
+      }
+      else{
+          result = Math.max(result, i - start);
+          for(int k = start; k &lt; i; k++){
+              if(arr[k] == current){
+                  start = k + 1;
+
+                  break;
+              }
+             flag[arr[k]] = false;
+          }
+
+      }
+
+  }
+
+  result = Math.max(arr.length - start, result);
+  return result;
+}
+</code></pre><p>Solution 2:</p>
+<pre><code>public int lengthOfLongestSubstring(String s) {
+  if(s == null)
+  return 0;
+
+  int start = 0;
+  int result = 0;
+
+  HashMap&lt;Character,Integer&gt; map = new HashMap&lt;Character, Integer&gt;();
+  for(int i = 0; i &lt; s.length(); i++){
+      char c = s.charAt(i);
+      if(map.containsKey(c)){
+          result = Math.max(result, map.size());
+          while(map.containsKey(c)){
+              map.remove(s.charAt(start));
+              start++;
+          }
+          map.put(c, i);
+      }
+      else{
+          map.put(c, i);
+      }
+  }
+  result = Math.max(result, map.size());
+  return result;
+}
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">
+    <time datetime="2016-08-26T12:50:45.000Z" class="entry-date">
+        2016-08-26
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-C-静态数组与动态数组定义的区别" class="post-C-静态数组与动态数组定义的区别 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +184,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisbr51l400023og2dvuo2jay" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisbt5hdt0000ykg2fsdmd3m9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -104,7 +212,7 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
 5) int[] a; a=new int[5]; //正确,同(2)一样int[] a; a={1,2,3,4,5}; //错误,数组常量只能在初始化操作中使用，如（3）
 6) int a[]; a[0]=1; //错误,因为数组没有初始化,不能赋值 a[1]=2;
 </code></pre><p>1.动态初始化：数组定义与为数组分配空间和赋值的操作分开进行； （一般用指针实现动态数组，返回数组首地址）</p>
-<p>2.静态初始化：在定义数字的同时就为数组元素分配空间并赋值；</p>
+<p>2.静态初始化：在定义数组的同时就为数组元素分配空间并赋值；</p>
 <p>3.默认初始化：数组是引用类型，它的元素相当于类的成员变量，因此数组分配空间后，每个元素也被按照成员变量的规则被隐士初始化。</p>
 <p>数组定义的区别，可参考这篇文章<a href="http://www.cnblogs.com/Yogurshine/archive/2012/12/29/2839238.html" target="_blank" rel="external">Java、C#、C++定义数组区别</a></p>
 
@@ -143,7 +251,7 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisbr51l000013og26mupvb6k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisbt5he60001ykg233rjs3gf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -247,7 +355,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="cisbr51kt00003og2ucvj2hxd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="cisbt5hep0003ykg2xme2yvly" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -300,6 +408,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">Longest Substring Without Repeating Characters</a>
+          </li>
         
           <li>
             <a href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>
