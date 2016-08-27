@@ -61,6 +61,64 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-Java的几种数据存储方式" class="post-Java的几种数据存储方式 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/08/27/Java的几种数据存储方式/">Java的几种数据存储方式</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="ciscpzgvd00058sg2bkzg8iwo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>　　<strong>程序运行时，有六个地方可以保存数据，其实这里讲数据保存到不同的地方也是指内存分配方式的不同，下面来介绍一下它们的区别。</strong></p>
+<ol>
+<li><p>寄存器。这是最快的保存区域，因为它位于和其他所有保存方式不同的地方：处理器内<br>部。然而，寄存器的数量十分有限，所以寄存器是根据需要由编译器分配。我们对此没有直<br>接的控制权，也不可能在自己的程序里找到寄存器存在的任何踪迹。</p>
+</li>
+<li><p>堆栈。驻留于常规RAM（ 随机访问存储器） 区域，但可通过它的“堆栈指针”获得处理的直<br>接支持。堆栈指针若向下移，会创建新的内存；若向上移，则会释放那些内存。这是一种特<br>别快、特别有效的数据保存方式，仅次于寄存器。创建程序时，Java编译器必须准确地知道<br>堆栈内保存的所有数据的“长度”以及“存在时间”。</p>
+</li>
+<li><p>堆。一种常规用途的内存池（ 也在RAM区域） ，其中保存了Java对象。和堆栈不同，“内<br>存堆”或“堆”（ Heap） 最吸引人的地方在于编译器不必知道要从堆里分配多少存储空间，也不<br>必知道存储的数据要在堆里停留多长的时间。因此，用堆保存数据时会得到更大的灵活性。<br>要求创建一个对象时，只需用new命令编制相关的代码即可。　</p>
+</li>
+<li><p>静态存储。这儿的“静态”（ Static） 是指“位于固定位置”（ 尽管也在RAM里） 。程序运行期<br>间，静态存储的数据将随时等候调用。可用static关键字指出一个对象的特定元素是静态的。<br>但Java对象本身永远都不会置入静态存储空间。</p>
+</li>
+<li><p>常数存储。常数值通常直接置于程序代码内部。这样做是安全的，因为它们永远都不会改<br>变。有的常数需要严格地保护，所以可考虑将它们置入只读存储器（ROM）。</p>
+</li>
+<li><p>非RAM存储。若数据完全独立于一个程序之外，则程序不运行时仍可存在，并在程序的控<br>制范围之外。其中两个最主要的例子便是“流式对象”和“固定对象”。对于流式对象，对象会变<br>成字节流，通常会发给另一台机器。而对于固定对象，对象保存在磁盘中。即使程序中止运<br>行，它们仍可保持自己的状态不变。对于这些类型的数据存储，一个特别有用的技巧就是它<br>们能存在于其他媒体中。一旦需要，甚至能将它们恢复成普通的、基于RAM的对象。</p>
+</li>
+</ol>
+<p><strong>注：</strong>前面讲到的静态数组和动态数组创建时内存分配的区别，与这里的堆栈和堆分别对应。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/27/Java的几种数据存储方式/">
+    <time datetime="2016-08-27T04:52:14.000Z" class="entry-date">
+        2016-08-27
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-Java-类边界关键字" class="post-Java-类边界关键字 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +134,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="ciscjgim40001jsg25zz3o2ee" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="ciscpzgur00008sg2fbul5ana" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -120,7 +178,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="ciscjginb0004jsg2a16srx96" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="ciscpzgv900048sg284baiipr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -228,7 +286,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="ciscjgima0002jsg2fcuubqcp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="ciscpzgux00018sg28gnb79pv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -295,7 +353,7 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="ciscjgimp0003jsg2ropm7ji9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="ciscpzgv200028sg2y6e97y4f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -399,7 +457,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="ciscjgilv0000jsg27go2gmhm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="ciscpzgv600038sg2n04y3bce" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -453,6 +511,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
       <ul>
         
           <li>
+            <a href="/2016/08/27/Java的几种数据存储方式/">Java的几种数据存储方式</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/27/Java-类边界关键字/">Java  类边界关键字</a>
           </li>
         
@@ -466,10 +528,6 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
           <li>
             <a href="/2016/08/26/Remove-Nth-Node/">LeetCode:Remove Nth Node From End of List</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/24/hello-world/">欢迎帅哥美女光临寒客</a>
           </li>
         
       </ul>
