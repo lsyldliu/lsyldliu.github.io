@@ -61,6 +61,105 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-Java-句柄" class="post-Java-句柄 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/08/27/Java-句柄/">Java 句柄</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="cisd4fyse000534g22e0kmopo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>　　这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。</p>
+<p>1.数组句柄</p>
+<pre><code>int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并没有给数组分配存储空间，所以数组实际上并不存在。
+</code></pre><p>当令</p>
+<pre><code>a1 = new int[10]；
+</code></pre><p>　　此时new int[10]则创建了拥有10个元素的整形数组对象，并令句柄a1指向该数组的首地址，此时可以按操作数组的方式对a1进行操作。</p>
+<p>　　当然句柄也可以进行复制操作，这里在创建另外一个数组句柄，前提是要对a1进行初始化。</p>
+<pre><code>int[] a1 = { 1, 2, 3, 4, 5 };
+int[] a2;
+a2 = a1;
+</code></pre><p>　　下面以一段可用的代码来演示一下句柄复制的过程。</p>
+<pre><code>public class Arrays {
+  public static void main(String[] args) {
+      int[] a1 = { 1, 2, 3, 4, 5 };
+      int[] a2;
+      a2 = a1;
+      for(int i = 0; i &lt; a2.length; i++)
+      a2[i]++;
+      for(int i = 0; i &lt; a1.length; i++)
+      prt(&quot;a1[&quot; + i + &quot;] = &quot; + a1[i]);
+      } 
+      static void prt(String s) {
+      System.out.println(s);
+    }
+} ///
+</code></pre><p>2.对象句柄</p>
+<p>　　　首先创建一个类Number,</p>
+<pre><code>class Number {
+    int i;
+}
+</code></pre><p>然后创建该类的两个实例</p>
+<pre><code>Number n1 = new Number();
+Number n2 = new Number();
+</code></pre><p>n1和n2为该类的两个句柄，这两个句柄分别指向该类的两个对象，这里通过new Number()创建类的对象，当然和数组句柄一样，对象句柄也能进行复制，</p>
+<pre><code>n2 = n1; 这里令句柄n2指向n1的对象，改变n1的同时也会改变n2,n2的对象则会被垃圾收集器回收
+</code></pre><p>同样这里以实例来演示这种变化</p>
+<pre><code>class Number {
+       int i;
+} 
+public class Assignment {
+     public static void main(String[] args) {
+        Number n1 = new Number();
+        Number n2 = new Number();
+        n1.i = 9;
+        n2.i = 47;
+        System.out.println(&quot;1: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+        n1 = n2;
+        System.out.println(&quot;2: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+        n1.i = 27;
+        System.out.println(&quot;3: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+         }
+   }
+</code></pre><p>输出结果如下：</p>
+<pre><code>1: n1.i: 9, n2.i: 47
+2: n1.i: 47, n2.i: 47
+3: n1.i: 27, n2.i: 27
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/27/Java-句柄/">
+    <time datetime="2016-08-27T10:59:34.000Z" class="entry-date">
+        2016-08-27
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-Java的几种数据存储方式" class="post-Java的几种数据存储方式 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +175,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="ciscpzgvd00058sg2bkzg8iwo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="cisd4fys4000334g2tidj1quv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -134,7 +233,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="ciscpzgur00008sg2fbul5ana" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="cisd4fyro000034g2svqh1nne" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -178,7 +277,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="ciscpzgv900048sg284baiipr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="cisd4fyrw000134g2yxr4nvl0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -286,7 +385,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="ciscpzgux00018sg28gnb79pv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisd4fys6000434g2jl4njqjf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -353,7 +452,7 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="ciscpzgv200028sg2y6e97y4f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisd4fys0000234g2qdlxz502" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -457,7 +556,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="ciscpzgv600038sg2n04y3bce" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/24/hello-world/" data-id="cisd4fysj000634g2167a9r0p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -466,7 +565,8 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         <p>　　欢迎访问本人的博客！博客刚搭建成功，界面比较简单，以后我会逐渐丰富博客的内容。</p>
 <p>　　本人于2015年6月毕业于安徽工业大学自动化专业，9月进入浙江大学控制系攻读硕士学位，目前研究方向为工业控制系统网络安全。本人喜欢技术编程，目前正在学习C++/Java，准备从事互联网技术研发相关工作。平时打打网球，看看电影，日子就这么过去了。</p>
 <p>　　鉴于本人的水平比较low，在今后的学习过程中还需继续努力，希望各位大神不吝赐教，给予指导！本人的博客地址：lsyldliu.cn，邮箱：ldliu@zju.edu.cn，QQ:1250108009，欢迎与我联系。</p>
-<p>　</p>
+<p>　  <strong>学姐你好美啊，好稀饭你，咋办？你来镇博客吧！</strong></p>
+<p><img src="http://img0.ph.126.net/yTq32O8EyOPJ_QcomoJWQg==/6631572441537774216.jpg" alt="学姐你好美啊，好稀饭你啊，咋办？那就拿你来镇楼好了" title="这是美丽的学姐朱晓宇，做学弟女朋友吧！"></p>
 
       
     </div><!-- .entry-content -->
@@ -511,6 +611,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
       <ul>
         
           <li>
+            <a href="/2016/08/27/Java-句柄/">Java 句柄</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/27/Java的几种数据存储方式/">Java的几个数据保存地方</a>
           </li>
         
@@ -524,10 +628,6 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
           <li>
             <a href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/26/Remove-Nth-Node/">LeetCode:Remove Nth Node From End of List</a>
           </li>
         
       </ul>

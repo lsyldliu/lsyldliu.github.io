@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。
+1.数组句柄
+int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Java 句柄 | 龙少爷的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。
+1.数组句柄
+int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并没有给数组分配存储空间，所以数组实际上并不存在。
+当令
+a1 = new int[10]；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 句柄">
+<meta property="og:url" content="http://lsyldliu/2016/08/27/Java-句柄/index.html">
+<meta property="og:site_name" content="龙少爷的博客">
+<meta property="og:description" content="这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。
+1.数组句柄
+int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并没有给数组分配存储空间，所以数组实际上并不存在。
+当令
+a1 = new int[10]；">
+<meta property="og:updated_time" content="2016-08-27T11:45:16.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 句柄">
+<meta name="twitter:description" content="这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。
+1.数组句柄
+int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并没有给数组分配存储空间，所以数组实际上并不存在。
+当令
+a1 = new int[10]；">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="龙少爷的博客" rel="home">龙少爷的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">为技术而不断超越  浙大控制系</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">学术研究方向</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">C++/Java学习</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Java-句柄" class="post-Java-句柄 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      Java 句柄
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="cisd4fyse000534g22e0kmopo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>　　这几天在学习Java，一直在看think in Java这本书，这本书确实不错，让我对面向对象的编程有了更深一层的理解。书里面一直在强调“句柄”这个概念，之前学习C++的之前，并没有去理解这个概念，故写下对它的理解。</p>
+<p>1.数组句柄</p>
+<pre><code>int[] a1; 
+这里创建了一个句柄a1，a1指向一个数组，但并没有给数组分配存储空间，所以数组实际上并不存在。
+</code></pre><p>当令</p>
+<pre><code>a1 = new int[10]；
+</code></pre><p>　　此时new int[10]则创建了拥有10个元素的整形数组对象，并令句柄a1指向该数组的首地址，此时可以按操作数组的方式对a1进行操作。</p>
+<p>　　当然句柄也可以进行复制操作，这里在创建另外一个数组句柄，前提是要对a1进行初始化。</p>
+<pre><code>int[] a1 = { 1, 2, 3, 4, 5 };
+int[] a2;
+a2 = a1;
+</code></pre><p>　　下面以一段可用的代码来演示一下句柄复制的过程。</p>
+<pre><code>public class Arrays {
+  public static void main(String[] args) {
+      int[] a1 = { 1, 2, 3, 4, 5 };
+      int[] a2;
+      a2 = a1;
+      for(int i = 0; i &lt; a2.length; i++)
+      a2[i]++;
+      for(int i = 0; i &lt; a1.length; i++)
+      prt(&quot;a1[&quot; + i + &quot;] = &quot; + a1[i]);
+      } 
+      static void prt(String s) {
+      System.out.println(s);
+    }
+} ///
+</code></pre><p>2.对象句柄</p>
+<p>　　　首先创建一个类Number,</p>
+<pre><code>class Number {
+    int i;
+}
+</code></pre><p>然后创建该类的两个实例</p>
+<pre><code>Number n1 = new Number();
+Number n2 = new Number();
+</code></pre><p>n1和n2为该类的两个句柄，这两个句柄分别指向该类的两个对象，这里通过new Number()创建类的对象，当然和数组句柄一样，对象句柄也能进行复制，</p>
+<pre><code>n2 = n1; 这里令句柄n2指向n1的对象，改变n1的同时也会改变n2,n2的对象则会被垃圾收集器回收
+</code></pre><p>同样这里以实例来演示这种变化</p>
+<pre><code>class Number {
+       int i;
+} 
+public class Assignment {
+     public static void main(String[] args) {
+        Number n1 = new Number();
+        Number n2 = new Number();
+        n1.i = 9;
+        n2.i = 47;
+        System.out.println(&quot;1: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+        n1 = n2;
+        System.out.println(&quot;2: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+        n1.i = 27;
+        System.out.println(&quot;3: n1.i: &quot; + n1.i +&quot;, n2.i: &quot; + n2.i);
+         }
+   }
+</code></pre><p>输出结果如下：</p>
+<pre><code>1: n1.i: 9, n2.i: 47
+2: n1.i: 47, n2.i: 47
+3: n1.i: 27, n2.i: 27
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/27/Java-句柄/">
+    <time datetime="2016-08-27T10:59:34.000Z" class="entry-date">
+        2016-08-27
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2016/08/27/Java的几种数据存储方式/" rel="next">Java的几个数据保存地方 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/27/Java-句柄/">Java 句柄</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/Java的几种数据存储方式/">Java的几个数据保存地方</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/Java-类边界关键字/">Java  类边界关键字</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/26/Longest-Substring-Without-Repeating-Characters/">Longest Substring Without Repeating Characters</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 龙少爷
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
