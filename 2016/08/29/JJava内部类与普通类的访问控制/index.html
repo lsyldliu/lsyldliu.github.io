@@ -4,10 +4,6 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and" />
-  
 
   
   
@@ -15,30 +11,15 @@ Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and" />
   
   
   
-  <title>LeetCode:Remove Nth Node From End of List | 龙少爷的博客</title>
+  <title>JJava内部类与普通类的访问控制 | 龙少爷的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode:Remove Nth Node From End of List">
-<meta property="og:url" content="http://lsyldliu/2016/08/26/Remove-Nth-Node/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="JJava内部类与普通类的访问控制">
+<meta property="og:url" content="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/index.html">
 <meta property="og:site_name" content="龙少爷的博客">
-<meta property="og:description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
-<meta property="og:updated_time" content="2016-08-26T04:33:31.298Z">
+<meta property="og:updated_time" content="2016-08-29T02:27:27.475Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode:Remove Nth Node From End of List">
-<meta name="twitter:description" content="题目描述：Given a linked list, remove the nth node from the end of list and return its head.
-For example,
-Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
-
-After removing the second node from the e">
+<meta name="twitter:title" content="JJava内部类与普通类的访问控制">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -79,7 +60,7 @@ After removing the second node from the e">
     </nav>
 </header>
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Remove-Nth-Node" class="post-Remove-Nth-Node post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-JJava内部类与普通类的访问控制" class="post-JJava内部类与普通类的访问控制 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -87,89 +68,27 @@ After removing the second node from the e">
         
   
     <h1 class="entry-title article-title">
-      LeetCode:Remove Nth Node From End of List
+      JJava内部类与普通类的访问控制
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisfwms54000an0g2f6nx5111" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/" data-id="cisfwms3s0001n0g2hd8c8v0f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
-<p>For example,</p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
-
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p>Note:</p>
-<p>Given n will always be valid.</p>
-<p>Try to do this in one pass.</p>
-<p>思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
-<p><strong>C++代码</strong></p>
-<pre><code>[cpp]
-ListNode* removeNthFromEnd(ListNode* head, int n) {
-    if(head == NULL || head-&gt;next == NULL)
-    return NULL;
-
-    ListNode* p = head;
-    ListNode* q = head;
-    ListNode* pPre = NULL;
-
-    for(int i = 0; i &lt; n - 1; i++){
-        p = p-&gt;next;
-    }
-
-    while(p-&gt;next != NULL){
-        pPre = q;
-        p = p-&gt;next;
-        q = q-&gt;next;
-    }
-
-     if(pPre == NULL){
-        head = q-&gt;next;
-        delete q;
-    }
-    else{
-        pPre-&gt;next = q-&gt;next;
-        delete q;
-    }
-
-
-     return head;
-}
-</code></pre><p><strong>Java代码</strong></p>
-<pre><code> public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode p = head;
-    ListNode q = head;
-    if(head == null || head.next == null){
-        return null;
-    }
-
-    for(int i = 0; i &lt; n; i++)
-        p = p.next;
-    if(p == null)
-       return head.next;
-    while(p.next != null){
-        p = p.next;
-        q = q.next;
-    }
-
-    q.next = q.next.next;
-    return head;
-
-}
-</code></pre>
+        
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2016/08/26/Remove-Nth-Node/">
-    <time datetime="2016-08-26T03:01:18.000Z" class="entry-date">
-        2016-08-26
+    <a href="/2016/08/29/JJava内部类与普通类的访问控制/">
+    <time datetime="2016-08-29T02:27:27.000Z" class="entry-date">
+        2016-08-29
     </time>
 </a>
     
@@ -182,10 +101,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2016/08/26/C-静态数组与动态数组定义的区别/" rel="prev"><span class="meta-nav">←</span> C++ 静态数组与动态数组定义的区别</a></span>
+        <span class="nav-previous"><a href="/2016/08/29/Java各各种常用集合/" rel="prev"><span class="meta-nav">←</span> Java各种常用集合</a></span>
     
     
-        <span class="nav-next"><a href="/2016/08/24/hello-world/" rel="next">欢迎帅哥美女光临寒客 <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/2016/08/28/就业城市选择/" rel="next">就业城市选择 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 

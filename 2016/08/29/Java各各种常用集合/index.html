@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.Java集合类图
+1.1
+
+1.2
+
+　　首先来看两张经典的Java集合框架图，上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，折线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Java各种常用集合 | 龙少爷的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Java集合类图
+1.1
+
+1.2
+
+　　首先来看两张经典的Java集合框架图，上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，折线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线边框的是接口，比如Collection，Iterator，List等。点线箭头表示一个特定的类准备实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java各种常用集合">
+<meta property="og:url" content="http://lsyldliu/2016/08/29/Java各各种常用集合/index.html">
+<meta property="og:site_name" content="龙少爷的博客">
+<meta property="og:description" content="1.Java集合类图
+1.1
+
+1.2
+
+　　首先来看两张经典的Java集合框架图，上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，折线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线边框的是接口，比如Collection，Iterator，List等。点线箭头表示一个特定的类准备实">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/80896/2012053020260298.jpg">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/80896/2012053020261738.gif">
+<meta property="og:updated_time" content="2016-08-29T10:15:19.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java各种常用集合">
+<meta name="twitter:description" content="1.Java集合类图
+1.1
+
+1.2
+
+　　首先来看两张经典的Java集合框架图，上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，折线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线边框的是接口，比如Collection，Iterator，List等。点线箭头表示一个特定的类准备实">
+<meta name="twitter:image" content="http://pic002.cnblogs.com/images/2012/80896/2012053020260298.jpg">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="龙少爷的博客" rel="home">龙少爷的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">为技术而不断超越  浙大控制系</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">学术研究方向</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">C++/Java学习</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Java各各种常用集合" class="post-Java各各种常用集合 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      Java各种常用集合
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Java各各种常用集合/" data-id="cisfwms480004n0g2u36tajdh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>1.Java集合类图</strong></p>
+<p>1.1</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/80896/2012053020260298.jpg" alt=""></p>
+<p>1.2</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/80896/2012053020261738.gif" alt=""></p>
+<p>　　首先来看两张经典的Java集合框架图，上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，折线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线边框的是接口，比如Collection，Iterator，List等。点线箭头表示一个<br>特定的类准备实现一个接口（ 在抽象类的情况下，则是“部分”实现一个接口） 。双线箭头表示<br>一个类可生成箭头指向的那个类的对象。例如，任何集合都可以生成一个反复器<br>（ Iterator） ，而一个列表可以生成一个ListIterator（ 以及原始的反复器，因为列表是从集合继<br>承的）。</p>
+<p>　　刚看这两张图时候可能让人有点儿摸不着头脑，但仔细研究之后会发现，它实际只有三个接口组件：Map，List和Set。而且每个组件实际只有两、三种实现方式，而且通常都只有一种特别好的方式。只要看出了这一点，集合就不会再令人生畏。</p>
+<p><strong>2.Java具体接口及实现类介</strong></p>
+<p>　　仔细观察上图可以知道，Java集合中包含了六大接口，分别是<strong>Collection，Set，List，Map，Iterator，Comparable</strong>，Iterator是根接口，Collection接口实现了Iterator，Collection接口有两个实现的子接口List，Set，Map没有继承Collection接口，也是一个独立的父接口。</p>
+<p><strong>2.1 Iterator接口</strong></p>
+<p>　　该接口是一个根接口，集合框架中的其他接口都或多或少实现了该接口，而且所有的实现类都实现了该接口。所有实现了Collection接口的容器类都有iterator方法，用于返回一个实现了Iterator接口的对象。Iterator对象称作迭代器，Iterator接口方法能以迭代方式逐个访问集合中各个元素，并可以从Collection中除去适当的元素。</p>
+<p><strong>2.2 Collection接口</strong></p>
+<p>　　Collection是最基本集合接口，它定义了一组允许重复的对象。Collection接口派生了两个子接口Set和List，分别定义了两种不同的存储方式，如下：</p>
+<p><strong>2.3 List接口</strong></p>
+<p> 　　List接口同样也继承于Collection接口，但是与Set接口恰恰相反，List接口的集合类中的元素是对象有序且可重复。</p>
+<p>　　特征：有序且可重复。</p>
+<p> 　　两个重要的实现类：ArrayList和LinkedList</p>
+<p>　　1.ArrayList特点是有序可重复的</p>
+<p> 　　2.LinkedList是一个双向链表结构的。</p>
+<p><strong>2.4 Set接口</strong></p>
+<p>　　Set接口继承于Collection接口，它没有提供额外的方法，Set完全就是一个Collection，只是具有不同的行为，但实现了Set接口的集合类中的元素是无序且不可重复。</p>
+<p>　　特征：无序且不可重复。<br>　　两个重要的实现类：HashSet和TreeSet</p>
+<p>　　1. HashSet是通过HashMap实现的,TreeSet是通过TreeMap实现的,只不过Set用的只是Map的key</p>
+<p>　　2. Map的key和Set都有一个共同的特性就是集合的唯一性.TreeMap更是多了一个排序的功能.</p>
+<p><strong>2.5 Map接口</strong></p>
+<p>　　Map也是接口，但没有继承Collection接口。该接口描述了从不重复的键到值的映射。Map接口用于维护键/值对（key/value pairs）。</p>
+<p>　　特征：它描述了从不重复的键到值的映射。</p>
+<p>　　两个重要的实现类：HashMap和TreeMap</p>
+<p>　　1.HashMap，中文叫散列表，基于哈希表实现，特点就是键值对的映射关系。一个key对应一个Value。HashMap中元素的排列顺序是不固定的。更加适合于对元素进行插入、删除和定位。</p>
+<p>　　2.TreeMap，基于红黑书实现。TreeMap中的元素保持着某种固定的顺序。更加适合于对元素的顺序遍历。</p>
+<p><strong>2.6 Comparable接口</strong></p>
+<p>　　Comparable可以用于比较的实现，实现了Comparable接口的类可以通过实现comparaTo方法从而确定该类对象的排序方式。</p>
+<p><strong>总结</strong></p>
+<p>　　Collection集合分别派生自Collection和Map接口，Collection有两个常用子接口List和Set，分别表示有序可重复，无序不可重复的集合。而Map存储的是key-value的映射。上面讲了那么多，Java2的集合框架，抽其核心，主要有三种：List、Set和Map。</p>
+<p>　　上面的总结看上去很多，很繁琐，其实你只要记得一点：collection是用于处理各种数据结构的，根据各种数据结构的特点理解，一切都会变简单。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/29/Java各各种常用集合/">
+    <time datetime="2016-08-29T08:43:53.000Z" class="entry-date">
+        2016-08-29
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2016/08/29/Collections-和Array类/" rel="prev"><span class="meta-nav">←</span> Collections 和Array类</a></span>
+    
+    
+        <span class="nav-next"><a href="/2016/08/29/JJava内部类与普通类的访问控制/" rel="next">JJava内部类与普通类的访问控制 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/29/Collections-和Array类/">Collections 和Array类</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/Java各各种常用集合/">Java各种常用集合</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/JJava内部类与普通类的访问控制/">JJava内部类与普通类的访问控制</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/就业城市选择/">就业城市选择</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/Java-句柄/">Java 句柄</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 龙少爷
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
