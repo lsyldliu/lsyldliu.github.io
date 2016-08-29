@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="Java 1.2添加了自己的一套实用工具，可用来对数组或列表进行排列和搜索。这些工具都属于两个新类的“静态”方法。这两个类分别是用于排序和搜索数组的Arrays，以及用于排序和搜索列表的Collections。这是JCF里面功能强大的工具，但初学者往往会忽视。按JCF文档的说法，这两个类提供了封装器" />
+  
 
   
   
@@ -13,13 +15,16 @@
   
   <title>Collections 和Array类 | 龙少爷的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Java 1.2添加了自己的一套实用工具，可用来对数组或列表进行排列和搜索。这些工具都属于两个新类的“静态”方法。这两个类分别是用于排序和搜索数组的Arrays，以及用于排序和搜索列表的Collections。这是JCF里面功能强大的工具，但初学者往往会忽视。按JCF文档的说法，这两个类提供了封装器实现（Wrapper Implementations）、数据结构算法和数组相关的应用。想必大家不会忘">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Collections 和Array类">
 <meta property="og:url" content="http://lsyldliu/2016/08/29/Collections-和Array类/index.html">
 <meta property="og:site_name" content="龙少爷的博客">
-<meta property="og:updated_time" content="2016-08-29T09:32:04.437Z">
+<meta property="og:description" content="Java 1.2添加了自己的一套实用工具，可用来对数组或列表进行排列和搜索。这些工具都属于两个新类的“静态”方法。这两个类分别是用于排序和搜索数组的Arrays，以及用于排序和搜索列表的Collections。这是JCF里面功能强大的工具，但初学者往往会忽视。按JCF文档的说法，这两个类提供了封装器实现（Wrapper Implementations）、数据结构算法和数组相关的应用。想必大家不会忘">
+<meta property="og:updated_time" content="2016-08-29T10:49:44.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Collections 和Array类">
+<meta name="twitter:description" content="Java 1.2添加了自己的一套实用工具，可用来对数组或列表进行排列和搜索。这些工具都属于两个新类的“静态”方法。这两个类分别是用于排序和搜索数组的Arrays，以及用于排序和搜索列表的Collections。这是JCF里面功能强大的工具，但初学者往往会忽视。按JCF文档的说法，这两个类提供了封装器实现（Wrapper Implementations）、数据结构算法和数组相关的应用。想必大家不会忘">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -81,7 +86,17 @@
 
     <div class="entry-content">
       
-        
+        <p>Java 1.2添加了自己的一套实用工具，可用来对数组或列表进行排列和搜索。这些工具都属于<br>两个新类的“静态”方法。这两个类分别是用于排序和搜索数组的Arrays，以及用于排序和搜索<br>列表的Collections。这是JCF里面功能强大的工具，但初学者往往会忽视。按JCF文档的说法，这两个类提供了封装器实现（Wrapper Implementations）、数据结构算法和数组相关的应用。<br>想必大家不会忘记上面谈到的“折半查找”、“排序”等经典算法吧，Collections类提供了丰富的静态方法帮助我们轻松完成这些在数据结构课上烦人的工作：<br>binarySearch：折半查找。 </p>
+<p>sort：排序，这里是一种类似于快速排序的方法，效率仍然是O(n * log n)，但却是一种稳定的排序方法。 </p>
+<p>reverse：将线性表进行逆序操作，这个可是从前数据结构的经典考题哦！ </p>
+<p>rotate：以某个元素为轴心将线性表“旋转”。 </p>
+<p>swap：交换一个线性表中两个元素的位置。<br>……<br>Collections还有一个重要功能就是“封装器”（Wrapper），它提供了一些方法可以把一个集合转换成一个特殊的集合，如下： </p>
+<p>unmodifiableXXX：转换成只读集合，这里XXX代表六种基本集合接口：Collection、List、Map、Set、SortedMap和SortedSet。如果你对只读集合进行插入删除操作，将会抛出UnsupportedOperationException异常。 </p>
+<p>synchronizedXXX：转换成同步集合。 </p>
+<p>singleton：创建一个仅有一个元素的集合，这里singleton生成的是单元素Set，<br>singletonList和singletonMap分别生成单元素的List和Map。 </p>
+<p>空集：由Collections的静态属性EMPTY_SET、EMPTY_LIST和EMPTY_MAP表示。 </p>
+<p>这次关于Java集合类概述就到这里，下一次我们来讲解Java集合类的具体应用，如List排序、删除重复元素。</p>
+
       
     </div><!-- .entry-content -->
 
@@ -141,7 +156,7 @@
           </li>
         
           <li>
-            <a href="/2016/08/29/JJava内部类与普通类的访问控制/">JJava内部类与普通类的访问控制</a>
+            <a href="/2016/08/29/JJava内部类与普通类的访问控制/">Java内部类与普通类的访问控制</a>
           </li>
         
           <li>
