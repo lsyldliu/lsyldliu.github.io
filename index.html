@@ -61,6 +61,67 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-常量指针" class="post-常量指针 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/09/01/常量指针/">指针和const限定符</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/09/01/常量指针/" data-id="ciskhqy89000858g2z33ogz7z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>　　指针是C和C++语言中最长常用的一个工具，也是很难学的一个东西，对它的理解一直在进步中。今天来介绍一个指针和const限定符。</p>
+<p>　　将const限定符和指针连起来用，会出现两种类型的指针，<strong>指向常量的指针</strong>和<strong>常量指针</strong>。下面通过实例来介绍一下它们的区别：</p>
+<p><strong>1.指向常量的指针</strong></p>
+<p>　　不能用于改变改变其所指向的对象的值，而且要想存放常量对象的地址，必须使用指向常量的指针。</p>
+<pre><code>const double pi = 3.14; //pi是个常量，它的值不能改变
+double *ptr = &amp;pi; //错误：ptr是个普通指针
+const double *cptr = &amp;pi; //正确：cptr可以指向一个双精度常数
+*cptr = 42; //错误，不能给*cptr赋值
+</code></pre><p>　　当然这里要强调一下，指向常量的指针没有规定其所指向的对象必须是一个常量。所谓指向常量的指针仅仅要求不能通过该指针改变对象的值，而对象的值是可以通过其他途径改变的。</p>
+<p>　　另外说明一点，虽然不能修改对象的值，但可以将指向常量的指针指向另外一个常量对象，</p>
+<pre><code>const double pt = 3.5;
+cptr = &amp;pt;
+</code></pre><p><strong>2.常量指针</strong></p>
+<p>　　由于指针是对象，故可以把指针本身定为常量。常量指针必须初始化，而且一旦初始化完成，则它的值（也就是存放在指针中的那个地址）就不能再被改变了。把*放在const关键字之前用以说明指针是一个常量，这样的书写形式隐含着一层意味，即不变的是指针本身而不是指向的那个值。</p>
+<pre><code>int errNumb = 0；
+int *const curErr = &amp;errNumb; //curErr将一直指向errNumb
+const double pi = 3.4159;
+const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指针
+</code></pre><p>　　指针本身是一个常量并不意味着不能通过指针修改其所指向对象的值，能否这样做完全依赖于所指向对象的类型。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/09/01/常量指针/">
+    <time datetime="2016-09-01T14:56:42.000Z" class="entry-date">
+        2016-09-01
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-Collections-和Array类" class="post-Collections-和Array类 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +137,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Collections-和Array类/" data-id="cisfwms3d0000n0g2fc37nips" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Collections-和Array类/" data-id="ciskhqy6i000158g2ff8xfnpd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -128,7 +189,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Java各各种常用集合/" data-id="cisfwms480004n0g2u36tajdh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Java各各种常用集合/" data-id="ciskhqy8g000a58g2qbujfc7x" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -205,7 +266,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/" data-id="cisfwms3s0001n0g2hd8c8v0f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/" data-id="ciskhqy7n000358g2v1qf35m6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -250,7 +311,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/28/就业城市选择/" data-id="cisfwms4j0007n0g2t4zzj7ir" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/28/就业城市选择/" data-id="ciskhqy84000758g2ic2jymgt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -294,7 +355,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="cisfwms440003n0g20f97bvlz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="ciskhqy6t000258g2aqv6xrx3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -393,7 +454,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="cisfwms520009n0g2rj17e9jm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="ciskhqy8d000958g2jvy8feyt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -451,7 +512,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="cisfwms4f0006n0g2ru3c0xjm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="ciskhqy7q000458g2s0yhfv6z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -495,7 +556,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="cisfwms4y0008n0g2h78qupkr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="ciskhqy8w000b58g2jf5ekezo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -603,7 +664,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="cisfwms3z0002n0g210sns7b6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="ciskhqy69000058g2z81p0in3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -655,110 +716,6 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
 
 
   
-    <article id="post-Remove-Nth-Node" class="post-Remove-Nth-Node post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/08/26/Remove-Nth-Node/">LeetCode:Remove Nth Node From End of List</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Remove-Nth-Node/" data-id="cisfwms54000an0g2f6nx5111" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>Given a linked list, remove the nth node from the end of list and return its head.</p>
-<p>For example,</p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
-
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p>Note:</p>
-<p>Given n will always be valid.</p>
-<p>Try to do this in one pass.</p>
-<p>思路：设置两个指针p跟q。p指针先移动n步，若此时p指针为空，则表示要删除的是头节点，此时直接返回head-&gt;next即可。如果p指针不为空，则将两个指针一起移动，直到p指针指向最后一个节点，令q-&gt;next=q-&gt;next-&gt;next即可删除第你n个节点。</p>
-<p><strong>C++代码</strong></p>
-<pre><code>[cpp]
-ListNode* removeNthFromEnd(ListNode* head, int n) {
-    if(head == NULL || head-&gt;next == NULL)
-    return NULL;
-
-    ListNode* p = head;
-    ListNode* q = head;
-    ListNode* pPre = NULL;
-
-    for(int i = 0; i &lt; n - 1; i++){
-        p = p-&gt;next;
-    }
-
-    while(p-&gt;next != NULL){
-        pPre = q;
-        p = p-&gt;next;
-        q = q-&gt;next;
-    }
-
-     if(pPre == NULL){
-        head = q-&gt;next;
-        delete q;
-    }
-    else{
-        pPre-&gt;next = q-&gt;next;
-        delete q;
-    }
-
-
-     return head;
-}
-</code></pre><p><strong>Java代码</strong></p>
-<pre><code> public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode p = head;
-    ListNode q = head;
-    if(head == null || head.next == null){
-        return null;
-    }
-
-    for(int i = 0; i &lt; n; i++)
-        p = p.next;
-    if(p == null)
-       return head.next;
-    while(p.next != null){
-        p = p.next;
-        q = q.next;
-    }
-
-    q.next = q.next.next;
-    return head;
-
-}
-</code></pre>
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2016/08/26/Remove-Nth-Node/">
-    <time datetime="2016-08-26T03:01:18.000Z" class="entry-date">
-        2016-08-26
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -788,6 +745,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
       <ul>
         
           <li>
+            <a href="/2016/09/01/常量指针/">指针和const限定符</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/29/Collections-和Array类/">Collections 和Array类</a>
           </li>
         
@@ -801,10 +762,6 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         
           <li>
             <a href="/2016/08/28/就业城市选择/">就业城市选择</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/27/Java-句柄/">Java 句柄</a>
           </li>
         
       </ul>
