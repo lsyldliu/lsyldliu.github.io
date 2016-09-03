@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="顺序容器
+　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。
+　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；li" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>C++顺序容器和关联容器 | 龙少爷的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="顺序容器
+　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。
+　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；list、forward_list支持快速的插入、删除操作，但不能随机访问容器中的元素。
+容器适配器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++顺序容器和关联容器">
+<meta property="og:url" content="http://lsyldliu/2016/09/02/C-顺序容器和关联容器/index.html">
+<meta property="og:site_name" content="龙少爷的博客">
+<meta property="og:description" content="顺序容器
+　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。
+　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；list、forward_list支持快速的插入、删除操作，但不能随机访问容器中的元素。
+容器适配器">
+<meta property="og:updated_time" content="2016-09-03T06:09:00.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++顺序容器和关联容器">
+<meta name="twitter:description" content="顺序容器
+　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。
+　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；list、forward_list支持快速的插入、删除操作，但不能随机访问容器中的元素。
+容器适配器">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="龙少爷的博客" rel="home">龙少爷的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">为技术而不断超越  浙大控制系</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">学术研究方向</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">C++/Java学习</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-C-顺序容器和关联容器" class="post-C-顺序容器和关联容器 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      C++顺序容器和关联容器
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/09/02/C-顺序容器和关联容器/" data-id="cismshak30000hkg2e4bdmd5j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>顺序容器</strong></p>
+<p>　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。</p>
+<p>　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；list、forward_list支持快速的插入、删除操作，但不能随机访问容器中的元素。</p>
+<p><strong>容器适配器</strong></p>
+<p>　　除了顺序容器外，标准库还定义了三个顺序容器适配器：stack、queue和priority_queue。<strong>适配器</strong>（adaptor）是标准库中的一个通用概念，容器、迭代器和函数都有适配器。本质上，一个适配器是一种机制，能使某种事物的行为看起来像另外一种事物一样。一个容器适配器接受一种已有的容器类型，使其行为看起来像一种不同的类型。例如，stack适配器接受一个顺序容器（除array和forward_lsit外),并使其操作起来像一个stack一样。</p>
+<p>　　对于一个给定的适配器，可以使用哪些容器是有限制的。所有适配器都要求容器具有添加和删除元素的能力。因此适配器不能构造在array之上。类似的，我们也不能使用forwar_list来构造适配器。stack可以使用出array和forward_list之外的任何容器类型来构造，标准库中stack默认基于deque实现；queue适配器可以构造于list和deque之上，但不能基于vector构造，默认基于deque实现；priority_queue可以构造于vector和deque之上，但不能基于list构造，默认基于vector实现。</p>
+<p><strong>关联容器</strong></p>
+<p>　　关联容器支持高效的关键字查找和访问。两个主要的类型是<strong>map</strong>和<strong>set</strong>。map中的元素是一些关键字-值（key-value）对；关键字起到索引的作用，值则表示与索引相关的数据。set中的每个元素只包含一个关键字；set支持高效的关键字查询操作——检查一个给定关键字是否在set中。</p>
+<p>　　标准库提供8个关联容器，如下所示：</p>
+<p><strong>1.按关键字有序保存元素</strong></p>
+<pre><code>map                  关联数组：保存关键字-值对
+set                  关键字即值，即只保存关键字的容器
+multimap             关键字可重复出现的map
+multiset             关键字可重复的set
+</code></pre><p><strong>2.无序集合</strong></p>
+<pre><code>unordered_map        用哈希函数组织的map
+unordered_set        用哈希函数组织的set
+unordered_multimap   哈希组织的map:关键字可以重复出现
+unordered_multiset   哈希组织的set：关键字可以重复出现
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/09/02/C-顺序容器和关联容器/">
+    <time datetime="2016-09-02T08:01:21.000Z" class="entry-date">
+        2016-09-02
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2016/09/01/常量指针/" rel="next">指针和const限定符 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/02/C-顺序容器和关联容器/">C++顺序容器和关联容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/01/常量指针/">指针和const限定符</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/Collections-和Array类/">Collections 和Array类</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/Java各各种常用集合/">Java各种常用集合</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/JJava内部类与普通类的访问控制/">Java内部类与普通类的访问控制</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 龙少爷
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

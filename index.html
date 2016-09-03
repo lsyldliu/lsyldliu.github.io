@@ -61,6 +61,67 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-C-顺序容器和关联容器" class="post-C-顺序容器和关联容器 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/09/02/C-顺序容器和关联容器/">C++顺序容器和关联容器</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/09/02/C-顺序容器和关联容器/" data-id="cismshak30000hkg2e4bdmd5j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>顺序容器</strong></p>
+<p>　　C++容器包括顺序容器和关联容器，C++新标准库提供了六种顺序容器，分别是string、vector、deque、array、list和forward_list。</p>
+<p>　　string、vector、deque、array支持快速快速访问，但在容器中间位置进行插入删除操作，代价比较大；list、forward_list支持快速的插入、删除操作，但不能随机访问容器中的元素。</p>
+<p><strong>容器适配器</strong></p>
+<p>　　除了顺序容器外，标准库还定义了三个顺序容器适配器：stack、queue和priority_queue。<strong>适配器</strong>（adaptor）是标准库中的一个通用概念，容器、迭代器和函数都有适配器。本质上，一个适配器是一种机制，能使某种事物的行为看起来像另外一种事物一样。一个容器适配器接受一种已有的容器类型，使其行为看起来像一种不同的类型。例如，stack适配器接受一个顺序容器（除array和forward_lsit外),并使其操作起来像一个stack一样。</p>
+<p>　　对于一个给定的适配器，可以使用哪些容器是有限制的。所有适配器都要求容器具有添加和删除元素的能力。因此适配器不能构造在array之上。类似的，我们也不能使用forwar_list来构造适配器。stack可以使用出array和forward_list之外的任何容器类型来构造，标准库中stack默认基于deque实现；queue适配器可以构造于list和deque之上，但不能基于vector构造，默认基于deque实现；priority_queue可以构造于vector和deque之上，但不能基于list构造，默认基于vector实现。</p>
+<p><strong>关联容器</strong></p>
+<p>　　关联容器支持高效的关键字查找和访问。两个主要的类型是<strong>map</strong>和<strong>set</strong>。map中的元素是一些关键字-值（key-value）对；关键字起到索引的作用，值则表示与索引相关的数据。set中的每个元素只包含一个关键字；set支持高效的关键字查询操作——检查一个给定关键字是否在set中。</p>
+<p>　　标准库提供8个关联容器，如下所示：</p>
+<p><strong>1.按关键字有序保存元素</strong></p>
+<pre><code>map                  关联数组：保存关键字-值对
+set                  关键字即值，即只保存关键字的容器
+multimap             关键字可重复出现的map
+multiset             关键字可重复的set
+</code></pre><p><strong>2.无序集合</strong></p>
+<pre><code>unordered_map        用哈希函数组织的map
+unordered_set        用哈希函数组织的set
+unordered_multimap   哈希组织的map:关键字可以重复出现
+unordered_multiset   哈希组织的set：关键字可以重复出现
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/09/02/C-顺序容器和关联容器/">
+    <time datetime="2016-09-02T08:01:21.000Z" class="entry-date">
+        2016-09-02
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-常量指针" class="post-常量指针 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +137,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/09/01/常量指针/" data-id="ciskhqy89000858g2z33ogz7z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/09/01/常量指针/" data-id="cismshalf000ahkg2vyehdyuh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -137,7 +198,7 @@ const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Collections-和Array类/" data-id="ciskhqy6i000158g2ff8xfnpd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Collections-和Array类/" data-id="cismshake0002hkg2olv74zna" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -189,7 +250,7 @@ const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Java各各种常用集合/" data-id="ciskhqy8g000a58g2qbujfc7x" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/Java各各种常用集合/" data-id="cismshal30009hkg2f4sz8qyr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -266,7 +327,7 @@ const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/" data-id="ciskhqy7n000358g2v1qf35m6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/29/JJava内部类与普通类的访问控制/" data-id="cismshakm0004hkg2j76qm4vh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -311,7 +372,7 @@ const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/28/就业城市选择/" data-id="ciskhqy84000758g2ic2jymgt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/28/就业城市选择/" data-id="cismshalz000chkg2972y65qb" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -355,7 +416,7 @@ const double *const pip = &amp;pi; // pip是一个指向常量对象的常量指
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="ciskhqy6t000258g2aqv6xrx3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-句柄/" data-id="cismshakj0003hkg2cakt4szh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -454,7 +515,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="ciskhqy8d000958g2jvy8feyt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java的几种数据存储方式/" data-id="cismshalg000bhkg2m8srnhwr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -512,7 +573,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="ciskhqy7q000458g2s0yhfv6z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/27/Java-类边界关键字/" data-id="cismshakq0005hkg27wr5kax1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -556,7 +617,7 @@ public class Assignment {
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="ciskhqy8w000b58g2jf5ekezo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/Longest-Substring-Without-Repeating-Characters/" data-id="cismshaku0006hkg2ch69v3vv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -649,73 +710,6 @@ public class Assignment {
 
 
   
-    <article id="post-C-静态数组与动态数组定义的区别" class="post-C-静态数组与动态数组定义的区别 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/08/26/C-静态数组与动态数组定义的区别/">C++ 静态数组与动态数组定义的区别</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://lsyldliu/2016/08/26/C-静态数组与动态数组定义的区别/" data-id="ciskhqy69000058g2z81p0in3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>　　<strong>C++中数组的定义包括静态定义和动态定义两种方式，静态定义使用[]方式，当然数组的大小需要提前知道，否则预编译不通过。动态定义使用new关键字，下面以实例来说明。</strong></p>
-<p><strong>静态定义：</strong></p>
-<pre><code>int a[5];  正确
-int i = 5;
-int a[i]; 错误 因为在编译阶段，编译器并不知道 i 的值是多少
-</code></pre><p><strong>动态定义：</strong></p>
-<pre><code>int size=50;
-int *p=new int[size]; 是正确的
-</code></pre><p><strong>两种定义方式的区别</strong></p>
-<p>　　对静态数组名进行sizeof运算时，结果是整个数组占用空间的大小；如：</p>
-<pre><code>int a[5]; 则sizeof(a)=20,sizeof(*a)=4.因为整个数组共占20字节，首个元素（int型）占4字节。
-int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int型也占4字节。
-</code></pre><p>　<br>　[]方式直接在栈上分配，会自动释放，效率高，但是栈空间有限；而new方式在堆分配空间，效率较低，同时还需要用delete进行内存的释放。</p>
-<p>　　为什么需要动态定义数组呢？这是因为，很多情况下，在预编译过程阶段，数组的长度是不能预先知道的，必须在程序运行时动态的给出，但是问题是，c++要求定义数组时，必须明确给定数组的大小，要不然编译通不过。</p>
-<p>这里介绍一下Java中定义数组的方式：</p>
-<pre><code>1) int[] a; //声明,没有初始化
-2) int[] a=new int[5]; //初始化为默认值,int型为0
-3) int[] a={1,2,3,4,5}; //初始化为给定值
-4) int[] a=new int[]{1,2,3,4,5}; //同(3) int[] a=new int[5]{1,2,3,4,5}; //错误,如果提供了数组初始化操作，则不能定义维表达式
-5) int[] a; a=new int[5]; //正确,同(2)一样int[] a; a={1,2,3,4,5}; //错误,数组常量只能在初始化操作中使用，如（3）
-6) int a[]; a[0]=1; //错误,因为数组没有初始化,不能赋值 a[1]=2;
-</code></pre><p>1.动态初始化：数组定义与为数组分配空间和赋值的操作分开进行； （一般用指针实现动态数组，返回数组首地址）</p>
-<p>2.静态初始化：在定义数组的同时就为数组元素分配空间并赋值；</p>
-<p>3.默认初始化：数组是引用类型，它的元素相当于类的成员变量，因此数组分配空间后，每个元素也被按照成员变量的规则被隐士初始化。</p>
-<p>数组定义的区别，可参考这篇文章<a href="http://www.cnblogs.com/Yogurshine/archive/2012/12/29/2839238.html" target="_blank" rel="external">Java、C#、C++定义数组区别</a></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2016/08/26/C-静态数组与动态数组定义的区别/">
-    <time datetime="2016-08-26T12:11:02.000Z" class="entry-date">
-        2016-08-26
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -745,6 +739,10 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
       <ul>
         
           <li>
+            <a href="/2016/09/02/C-顺序容器和关联容器/">C++顺序容器和关联容器</a>
+          </li>
+        
+          <li>
             <a href="/2016/09/01/常量指针/">指针和const限定符</a>
           </li>
         
@@ -758,10 +756,6 @@ int *a=new int[4];则sizeof(a)=sizeof(*a)=4,因为地址位数为4字节，int�
         
           <li>
             <a href="/2016/08/29/JJava内部类与普通类的访问控制/">Java内部类与普通类的访问控制</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/28/就业城市选择/">就业城市选择</a>
           </li>
         
       </ul>
